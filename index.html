@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
     <title>Web-разработчик Мария</title>
 
@@ -82,7 +83,10 @@
         </div>
 
 
-        <div class="header__telephone">+7&nbsp;(921)&nbsp;757-57-64</div>
+
+        <div class="header__telephone" id="telephone">
+            <a href="tel:+79217575764">+7&nbsp;(921)&nbsp;757-57-64</a>
+        </div>
         <button class="header__btn" type="button">Заказать звонок</button>
         <div id="imgphone">
             <i class="fa fa-phone p-0" aria-hidden="true"></i>
@@ -148,28 +152,28 @@
                     <div class="swiper-slide">
                         <figure><img src="img/editor.png" alt="Изображение сайта1">
                             <figcaption>
-                                <a href="editor/index.html" target="editor">Редактор текста</a>
+                                <a class="swiper-slide__link" ref="editor/index.html" target="editor">Редактор текста</a>
                             </figcaption>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure><img src="img/todolist.PNG" alt="Изображение сайта2 ">
                             <figcaption>
-                                <a href="todolist/index.html" target="editor">Список дел</a>
+                                <a class="swiper-slide__link" href="todolist/index.html" target="editor">Список дел</a>
                             </figcaption>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure><img src="img/translator.PNG" alt="Изображение сайта3">
                             <figcaption>
-                                <a href="translator/index.html" target="translator">Переводчик</a>
+                                <a class="swiper-slide__link" href="translator/index.html" target="translator">Переводчик</a>
                             </figcaption>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure><img src="img/football.PNG" alt="Изображение сайта4">
                             <figcaption>
-                                <a href="football/index.html" target="football">Футбол</a>
+                                <a class="swiper-slide__link" href="football/index.html" target="football">Футбол</a>
                             </figcaption>
                         </figure>
                     </div>
@@ -188,11 +192,9 @@
             <span class="main-price__teg-canvas">&lt;canvas&gt;</span>
             <span class="main-price__teg-slash">&lt;/&gt;</span>
             <div class="text main-price__text">
-                <div class="text__one">Адаптивная вёрстка под все устройства и браузеры от 1000&nbsp;рублей всего за
-                    4&nbsp;часа.*
+                <div class="text__one">Адаптивная вёрстка под все устройства и браузеры от 1000&nbsp;рублей всего за 4&nbsp;часа.*
                 </div>
-                <div class="text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются
-                    индивидуально,&nbsp;в&nbspзависимости от сложности задач.
+                <div class="text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально,&nbsp;в&nbspзависимости от сложности задач.
                 </div>
             </div>
         </div>
@@ -206,21 +208,23 @@
             </ul>
         </nav>
         <div class="telephone footer__telephone">
-            <div class="telephone__item">
-                <i class="fa fa-phone" aria-hidden="true"></i> &nbsp;+7&nbsp;(921)&nbsp;757-57-64&nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;
+            <div class="telephone__item" id="footer-telephone">
+
+                <a href="tel:+79217575764">&nbsp;+7&nbsp;(921)&nbsp;757-57-64</a>
             </div>
             <div class="telephone__item">
-                <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;malevanayamv@mail.ru
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:malevanayamv@mail.ru" id="mailto">&nbsp;malevanayamv@mail.ru</a>
             </div>
         </div>
         <div class="contact footer__contact">
             <button class="contact__btn" type="button">Заказать звонок</button>
             <div class="contact__vk">
-                <div class="vk-1"></div>
+                <a class="vk-1" href="https://vk.com/id23350535" target="_blank"></a>
                 <div class="facebook-logo-1"></div>
                 <div class="twitter-logo-silhouette"></div>
-                <div class="instagram"></div>
+                <a class="instagram" href="https://www.instagram.com/mariavalerievnam" target="_blank"></a>
+
             </div>
         </div>
         <div class="footer__pravo">&copy;&nbsp;Мария Малеваная 2020

@@ -97,26 +97,25 @@ $(function($) {
             type: "POST",
             url: "mail.php",
             data: $(this).serialize()
-        }).done(function(){
+        }).done(function() {
             let phone = $('input[type=tel]').val();
-            if(phone.indexOf('_') === -1){
-             alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!" )
-            }
-            else{alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!")};
-             $('.pop-containerphone').fadeOut(400, enableScroll);
-    });
-    return false;
+            if (phone.indexOf('_') === -1) {
+                alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!")
+            } else { alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!") };
+            $('.pop-containerphone').fadeOut(400, enableScroll);
+        });
+        return false;
     });
     $('#formmail').submit(function() {
         $.ajax({
             type: "POST",
             url: "mail.php",
             data: $(this).serialize()
-        }).done(function(){
-             alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!" );
-             $('.pop-containermail').fadeOut(400, enableScroll);
-    });
-    return false;
+        }).done(function() {
+            alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!");
+            $('.pop-containermail').fadeOut(400, enableScroll);
+        });
+        return false;
     });
 
 
@@ -128,6 +127,14 @@ $(function($) {
             $(this).fadeOut(400, enableScroll);
         }
     });
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById("telephone").innerHTML = '<a href="tel: +79217575764">+79217575764</a>';
+        document.getElementById("footer-telephone").innerHTML = '<a href="tel: +79217575764">+79217575764</a>';
+    } else {
+        document.getElementById("telephone").innerHTML = '+7 (921) 757-57-64';
+        document.getElementById("footer-telephone").innerHTML = '+7 (921) 757-57-64';
+    }
 
 
 });
