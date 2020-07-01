@@ -55,7 +55,7 @@ $(function() {
                 slidesPerView: 2,
                 spaceBetween: 40,
             },
-            1310: {
+            1025: {
                 slidesPerView: 3,
                 spaceBetween: 40,
             }
@@ -64,87 +64,61 @@ $(function() {
     });
 
     function disableScroll() {
-        $('body').css('overflow', 'hidden');
-
+        $('.page').css('overflow', 'hidden');
     }
 
     function enableScroll() {
-        $('body').css('overflow', 'visible');
-
+        $('.page').css('overflow', 'visible');
     }
-    $('.header__menu-burg').click(function() {
+    $('.header-menu-burg').click(function() {
         $('.menu-burg-block').slideToggle(500);
-        if ($(window).width() < 721) {
-            $('.header__menu-burg-item:nth-child(1)').toggleClass('first');
-            $('.header__menu-burg-item:nth-child(2)').toggleClass('middle');
-            $('.header__menu-burg-item:nth-child(3)').toggleClass('last');
+        if ($(window).width() < 430) {
+            $('.header-menu-burg__item:nth-child(1)').toggleClass('first');
+            $('.header-menu-burg__item:nth-child(2)').toggleClass('middle');
+            $('.header-menu-burg__item:nth-child(3)').toggleClass('last');
         } else {
-            $('.header__menu-burg-item:nth-child(1)').toggleClass('first720');
-            $('.header__menu-burg-item:nth-child(2)').toggleClass('middle');
-            $('.header__menu-burg-item:nth-child(3)').toggleClass('last720');
+            $('.header-menu-burg__item:nth-child(1)').toggleClass('first430');
+            $('.header-menu-burg__item:nth-child(2)').toggleClass('middle');
+            $('.header-menu-burg__item:nth-child(3)').toggleClass('last430');
         }
 
     });
-    $('#imgphone, .header__btn, .text__button, .contact__btn, .header__btn, .main-service__button').click(function() {
-        $('.pop-containerphone').fadeIn(400, disableScroll());
-        $('.applicationphone').animate({}, 500);
+    $('.imgphone, .header-telephone__btn,  .main-name-text__btn, .service__btn, .contact__btn').click(function() {
+        $('.pop-container').css({ opacity: 1, display: 'flex' }).fadeIn(400, disableScroll());
+        $('.pop-container__form-phone').css({ 'display': 'flex' }, 500);
         $('input[type=tel]').inputmask({
             "mask": " + 7(999) 999 - 99 - 99"
         });
 
     });
-    $('.main-examples__btn').click(function() {
-        $('.pop-containermail').fadeIn(400, disableScroll());
-        $('.applicationmail').animate({}, 500);
+    $('.btn-mail').click(function() {
+        $('.pop-container').css({ opacity: 1, display: 'flex' }).fadeIn(400, disableScroll());
+        $('.pop-container__form-mail').css({ 'display': 'flex' }, 500);
         $('input[name=email]').inputmask({
             mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
         });
     });
 
-    $('#formphone').submit(function() {
+    $('.form').submit(function() {
         $.ajax({
             type: "POST",
             url: "mail.php",
             data: $(this).serialize()
         }).done(function() {
             let phone = $('input[type=tel]').val();
-            if (phone.indexOf('_') === -1) {
-                alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!")
-            } else { alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!") };
-            $('.pop-containerphone').fadeOut(400, enableScroll);
-        });
-        return false;
-    });
-    $('#formmail').submit(function() {
-        $.ajax({
-            type: "POST",
-            url: "mail.php",
-            data: $(this).serialize()
-        }).done(function() {
-            alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!");
-            $('.pop-containermail').fadeOut(400, enableScroll);
+            if (phone.indexOf('_') !== -1) {
+                alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!")
+            } else { alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!") };
+            $('.pop-container').fadeOut(400, enableScroll);
         });
         return false;
     });
 
-
-
-
-
-    $('.pop-containerphone, .pop-containermail').click(function(ev) {
+    $('.pop-container').click(function(ev) {
         if (ev.target === this) {
             $(this).fadeOut(400, enableScroll);
+            $('.form').css({ 'display': 'none' }, 500);
         }
     });
-
-    // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    //     document.getElementById("telephone").innerHTML = '<a href="tel: +79217575764">+79217575764</a>';
-    //     document.getElementById("footer-telephone").innerHTML = '<a href="tel: +79217575764">+79217575764</a>';
-    // } else {
-    //     document.getElementById("telephone").innerHTML = '+7 (921) 757-57-64';
-    //     document.getElementById("footer-telephone").innerHTML = '+7 (921) 757-57-64';
-    // }
-
-
 
 });

@@ -1,237 +1,216 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0 ">
+    <meta name="format-detection" content="telephone=no ">
 
     <title>Web-разработчик Мария</title>
 
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="swiper/css/swiper.min.css ">
+    <link rel="stylesheet" href=" normalize.css ">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes=" 16x16" href="img/favicon-16x16.png ">
     <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color=" #5bbad5 ">
+    <meta name="msapplication-TileColor" content="#da532c ">
     <meta name="theme-color" content="#ffffff">
-    <script src="jquery-3.4.1.min.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="jquery.inputmask.min.js" defer></script>
-    <script src="swiper/js/swiper.min.js " defer></script>
-    <script src="script.js" defer></script>
+
 
 
 </head>
 
-<body class="container">
-    <div class="pop-containerphone">
-        <div class="applicationphone">
-            <form id="formphone">
-                <label> Ваше имя:
-                    <input class="input-form" required type="text" size="20" name="name"
-                        placeholder="Напишите Ваше имя">
-                </label>
-                <label> Ваш телефон <input class="input-form" required type="tel" size="20" name="phone"
-                        placeholder="Напишите Ваш телефон">
-                </label>
-                <button class="sub" title=" отправить">Заказать обратный звонок</button>
-            </form>
-        </div>
-    </div>
-    <div class="pop-containermail">
-        <div class="applicationmail">
-            <form id="formmail">
-                <label> Ваше имя:
-                    <input class="input-form" required type="text" size="20" name="name"
-                        placeholder="Напишите Ваше имя">
-                </label>
-                <label> Ваша почта <input class="input-form" required type="text" size="20" name="email"
-                        placeholder="Напишите Вашу почту">
-                </label>
-                <button class="sub" title="отправить">Заказать проект</button>
-            </form>
-        </div>
+<body class="body">
+    <div class="pop-container">
+
+        <form class="form pop-container__form-phone">
+            <label class="form__label"> Ваше имя:
+                <input class="form__input" required type="text" size="25" name="name" placeholder="Напишите Ваше имя">
+            </label>
+            <label class="form__label"> Ваш телефон:
+                <input class="form__input" required type="tel" size="25" name="phone"
+                    placeholder="Напишите Ваш телефон">
+            </label>
+            <button class="form-btn" title="отправить">Заказать обратный звонок</button>
+        </form>
+        <form class="form pop-container__form-mail">
+            <label class="form__label"> Ваше имя:
+                <input class="form__input" required type="text" size="25" name="name" placeholder="Напишите Ваше имя">
+            </label>
+            <label class="form__label"> Ваша почта:
+                <input class="form__input" required type="text" size="25" name="email"
+                    placeholder="Напишите Вашу почту">
+            </label>
+            <button class="form-btn" title="отправить">Заказать проект</button>
+        </form>
 
     </div>
-
 
     <header class="header">
-
-        <nav class="menu header__menu">
-            <ul class="menu__list ">
-                <li class="menu__list-item"><a class="menu__link " href="#what">Услуги</a></li>
-                <li class="menu__list-item"><a class="menu__link " href="#work">Портфолио</a></li>
-                <li class="menu__list-item"><a class="menu__link " href="#price">Стоимость</a></li>
-            </ul>
-        </nav>
-
-        <div class="menu header__menu-burg ">
-            <div class="header__menu-burg-item "></div>
-            <div class="header__menu-burg-item "></div>
-            <div class="header__menu-burg-item "></div>
-            <div class="menu-burg-block ">
-                <ul class="menu-burg-block__list ">
-                    <li class="menu-burg-block__list-item "><a class="menu__link " href="#what ">Услуги</a>
+        <div class="header-container container">
+            <nav class="header-menu">
+                <ul class="list list_row">
+                    <li class="list-item"><a class="list-item__link" href="#what">Услуги</a>
                     </li>
-                    <li class="menu-burg-block__list-item "><a class="menu__link " href="#work ">Портфолио</a></li>
-                    <li class="menu-burg-block__list-item "><a class="menu__link " href="#price ">Стоимость</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#work">Портфолио</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#price">Стоимость</a>
+                    </li>
                 </ul>
+            </nav>
+
+            <div class="header-menu-burg">
+                <div class="header-menu-burg__item"></div>
+                <div class="header-menu-burg__item"></div>
+                <div class="header-menu-burg__item"></div>
+                <div class="menu-burg-block">
+                    <ul class="list list_burg">
+                        <li class="list-item"><a class="list-item__link" href="#what">Услуги</a></li>
+                        <li class="list-item"><a class="list-item__link" href="#work">Портфолио</a></li>
+                        <li class="list-item"><a class="list-item__link" href="#price">Стоимость</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            <div class="header-telephone">
+                <a class="header-telephone__link" href="tel:+79217575764">+7&nbsp;(921)&nbsp;757-57-64</a>
+                <button class="btn header-telephone__btn" type="button">Заказать звонок</button>
+                <div class="imgphone">
+                    <i class="fa fa-phone p-0" tabindex="0" aria-hidden="true"></i>
+                </div>
+            </div>
 
-
-
-        <div class="header__telephone">
-            <a href="tel:+79217575764" id="telephone">+7&nbsp;(921)&nbsp;757-57-64</a>
-        </div>
-        <button class="header__btn" type="button">Заказать звонок</button>
-        <div id="imgphone">
-            <i class="fa fa-phone p-0" aria-hidden="true"></i>
         </div>
     </header>
-    <main class="main">
-        <div class="main-name">
-            <span class="main-name__teg-img">&lt;image&gt;</span>
-            <span class="main-name__teg-id">#</span>
-            <span class="main-name__teg-div">&lt;div&gt;</span>
-            <span class="main-name__teg-svg">&lt;svg&gt;</span>
-            <span class="main-name__teg-canvas">&lt;canvas&gt;</span>
-            <span class="main-name__teg-slash">&lt;/&gt;</span>
-            <div class="text main-name__text">
-                <div class="text__lastname">Мария&nbsp;Малеваная</div>
-                <div class="text__profi">Frontend-разработчик и веб-верстальщик</div>
-                <button class="text__button" type="button">Узнать больше</button>
-            </div>
-            <div class="main-name__img">
-                <svg width="820" height="665" viewbox="0 0 820 665">
-                    <defs>
-                        <lineargradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color: #ff2701; stop-opacity:1" />
-                            <stop offset="100%" style="stop-color: #faea05f8; stop-opacity:0.4" />
-                        </lineargradient>
-                    </defs>
-                    <path d="M 45 665 Q 0 590 55 476 Q 120 345 250 210 Q 575 -115 820 138 L 820 666 L 45 666 Z "
-                        fill="url(#grad1) " />
-                    <image x="130" y="95" width="600" height="617" href="img\my dip.png" />
-                </svg>
-            </div>
-            <canvas id="myCanvas" width="320" height="350">
-                Your browser does not support the HTML5 canvas tag.</canvas>
+    <main class="main-name">
+        <span class="main-name__teg main-name__teg_img">&lt;image&gt;</span>
+        <span class="main-name__teg main-name__teg_id ">#</span>
+        <span class="main-name__teg main-name__teg_div ">&lt;div&gt;</span>
+        <span class="main-name__teg main-name__teg_svg">&lt;svg&gt;</span>
+        <span class="main-name__teg main-name__teg_canvas">&lt;canvas&gt;</span>
+        <span class="main-name__teg main-name__teg_slash ">&lt;/&gt;</span>
+        <div class="main-name-text container">
+            <h1 class="main-name-text__lastname">Мария&nbsp;Малеваная</h1>
+            <div class="main-name-text__profi">Frontend-разработчик и веб-верстальщик</div>
+            <button class="section-btn main-name-text__btn" type="button">Узнать больше</button>
         </div>
-        <div id="what" class="main-service">
-            <div class=" main-service__text">Что я делаю</div>
-            <div class="center main-service__center">
-                <div class="center__web ">
-                    <img src="img/tools-and-utensils.png" alt="Изображение лендинг">
+        <div class="main-name-img">
+            <svg width="820" height="665" viewbox=" 0 0 820 665 ">
+                <defs>
+                    <lineargradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color: #ff2701; stop-opacity:1" />
+                        <stop offset="100%" style="stop-color: #faea05f8; stop-opacity:0.4" />
+                    </lineargradient>
+                </defs>
+                <path d="M 35 665 Q 0 590 55 476 Q 120 345 250 210 Q 575 -115 820 138 L 820 666 L 45 666 Z"
+                    fill="url(#grad1)" />
+                <image x="130" y="140" width="600" height="617" href="img\my dip.png" />
+            </svg>
+        </div>
+        <canvas class="myCanvas" id="myCanvas" width="320" height="350">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+    </main>
+    <section id="what" class="service">
+        <div class="service-container container">
+            <h2 class="name-section">Что я делаю</h2>
+            <div class="center">
+                <div class="center-web">
+                    <img class="center-web__img" src="img/tools-and-utensils.png" alt=" Изображение лендинг ">
                     <p>Вёрстка лендинг–страниц и сайтов любой сложности</p>
                 </div>
-                <div class="center__web">
-                    <img src="img/responsive.png" alt="Изображение верстка">
+                <div class="center-web">
+                    <img class="center-web__img" src="img/responsive.png" alt="Изображение верстка ">
                     <p>Адаптивная вёрстка под все браузеры и устройства</p>
                 </div>
-                <div class="center__web">
-                    <img src="img/programming.png" alt="Изображение программирование">
+                <div class="center-web">
+                    <img class="center-web__img" src="img/programming.png" alt=" Изображение программирование ">
                     <p>Frontend–разработка и программирование</p>
                 </div>
-                <div class="center__web">
-                    <img src="img/coding.png" alt="Изображение коды">
+                <div class="center-web">
+                    <img class="center-web__img" src="img/coding.png" alt="Изображение коды">
                     <p>Исправление и доработка существующей вёрстки</p>
                 </div>
             </div>
-            <button class="main-service__button" type="button">Узнать стоимость</button>
+            <button class="section-btn service__btn" type="button">Узнать стоимость</button>
         </div>
-        <div id="work" class="main-examples">
-            <div class="main-examples__text">Примеры моих работ</div>
-            <div class="main-examples__blockbtn">
+    </section>
+    <section id="work" class="example">
+        <div class="example-container container">
+            <h2 class="name-section">Примеры моих работ</h2>
+            <div class="swiper-blockbtn">
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <figure><img src="img/editor.png" alt="Изображение сайта1">
-                            <figcaption>
-                                <a class="swiper-slide__link" href="editor/index.html" target="editor">Редактор текста</a>
-                            </figcaption>
-                        </figure>
+                        <img class="swiper-slide__img" src="img/editor.png" alt=" Изображение сайта1">
+                        <a class="swiper-slide__link" href="editor/index.html" target="editor">Редактор текста</a>
                     </div>
                     <div class="swiper-slide">
-                        <figure><img src="img/todolist.PNG" alt="Изображение сайта2 ">
-                            <figcaption>
-                                <a class="swiper-slide__link" href="todolist/index.html" target="editor">Список дел</a>
-                            </figcaption>
-                        </figure>
+                        <img class="swiper-slide__img" src="img/todolist.PNG" alt=" Изображение сайта2 ">
+                        <a class="swiper-slide__link" href="todolist/index.html" target="editor">Список дел</a>
                     </div>
                     <div class="swiper-slide">
-                        <figure><img src="img/translator.PNG" alt="Изображение сайта3">
-                            <figcaption>
-                                <a class="swiper-slide__link" href="translator/index.html" target="translator">Переводчик</a>
-                            </figcaption>
-                        </figure>
+                        <img class="swiper-slide__img" src="img/translator.PNG" alt=" Изображение сайта3 ">
+                        <a class="swiper-slide__link" href="translator/index.html" target="translator">Переводчик</a>
                     </div>
                     <div class="swiper-slide">
-                        <figure><img src="img/football.PNG" alt="Изображение сайта4">
-                            <figcaption>
-                                <a class="swiper-slide__link" href="football/index.html" target="football">Футбол</a>
-                            </figcaption>
-                        </figure>
+                        <img class="swiper-slide__img" src="img/football.PNG" alt=" Изображение сайта4 ">
+                        <a class="swiper-slide__link" href="football/index.html" target="football">Футбол</a>
                     </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <button class="main-examples__btn" type="button">Заказать проект</button>
+            <button class="section-btn btn-mail" type="button">Заказать проект</button>
         </div>
-        <div id="price" class="main-price">
-            <span class="main-price__teg-img">&lt;image&gt;</span>
-            <span class="main-price__teg-span">#</span>
-            <span class="main-price__teg-div">&lt;div&gt;</span>
-            <span class="main-price__teg-svg">&lt;svg&gt;</span>
-            <span class="main-price__teg-canvas">&lt;canvas&gt;</span>
-            <span class="main-price__teg-slash">&lt;/&gt;</span>
-            <div class="text main-price__text">
-                <div class="text__one">Адаптивная вёрстка под все устройства и браузеры от 1000&nbsp;рублей всего за 4&nbsp;часа.*
-                </div>
-                <div class="text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально,&nbsp;в&nbsp;зависимости от сложности задач.
+    </section>
+    <section class="price">
+        <span class="price__teg price__teg_img">&lt;image&gt;</span>
+        <span class="price__teg price__teg_span">&lt;span&gt;</span>
+        <span class="price__teg price__teg_div">&lt;div&gt;</span>
+        <span class="price__teg price__teg_svg">&lt;svg&gt;</span>
+        <span class="price__teg price__teg_canvas">&lt;canvas&gt;</span>
+        <span class="price__teg price__teg_slash">&lt;/&gt;</span>
+        <div class="price-text container">
+            <h3 id="price" class="price-text__one">Адаптивная&nbsp;вёрстка под все устройства <br>и браузеры от&nbsp;1000&nbsp;рублей всего за 4&nbsp;часа.*</h3>
+            <p class="price-text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально,
+                <br> в зависимости от сложности задач. </p>
+        </div>
+    </section>
+    <div class="contact">
+        <div class="contact-container container">
+            <nav class="contact-menu">
+                <ul class="list list_column">
+                    <li class="list-item"><a class="list-item__link" href="#what">Услуги</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#work">Портфолио</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#price">Стоимость</a></li>
+                </ul>
+            </nav>
+            <div class="contact-telephone">
+                <a href="tel:+79217575764" class="phone contact-telephone__link">&nbsp;+7&nbsp;(921)&nbsp;757-57-64</a>
+                <a href="mailto:malevanayamv@mail.ru" class="mail contact-telephone__link">&nbsp;malevanayamv@mail.ru</a>
+            </div>
+            <div class="contact-internet">
+                <button class="contact__btn btn" type="button">Заказать звонок</button>
+                <div class="contact-vk">
+                    <a class="vk contact-vk__link" href=" https://vk.com/id23350535" target="_blank"></a>
+                    <a class="facebook contact-vk__link" href="https://www.facebook.com" target=" _blank"></a>
+                    <a class="twitter contact-vk__link" href="https://twitter.com/explore" target=" _blank"></a>
+                    <a class="instagram contact-vk__link" href="https://www.instagram.com/mariavalerievnam" target=" _blank "></a>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
     <footer class="footer">
-        <nav class="menu footer__menu">
-            <ul class="menu__list2">
-                <li class="menu__list2-item"><a class="menu__link" href="#what">Услуги</a></li>
-                <li class="menu__list2-item"><a class="menu__link" href="#work">Портфолио</a></li>
-                <li class="menu__list2-item"><a class="menu__link" href="#price">Стоимость</a></li>
-            </ul>
-        </nav>
-        <div class="telephone footer__telephone">
-            <div class="telephone__item">
-                <a href="tel:+79217575764" id="footer-telephone">&nbsp;+7&nbsp;(921)&nbsp;757-57-64</a>
-            </div>
-            <div class="telephone__item">
-
-                <a href="mailto:malevanayamv@mail.ru" id="mailto">&nbsp;malevanayamv@mail.ru</a>
-            </div>
-        </div>
-        <div class="contact footer__contact">
-            <button class="contact__btn" type="button">Заказать звонок</button>
-            <div class="contact__vk">
-                <a class="vk-1" href="https://vk.com/id23350535" target="_blank"></a>
-                <a class="facebook-logo-1" href="https://www.facebook.com" target="_blank"></a>
-                <a class="twitter-logo-silhouette" href="https://twitter.com/explore" target="_blank"></a>
-                <a class="instagram" href="https://www.instagram.com/mariavalerievnam" target="_blank"></a>
-
-            </div>
-        </div>
-        <div class="footer__pravo">&copy;&nbsp;Мария Малеваная 2020
-        </div>
+        &copy;&nbsp;Мария Малеваная 2020
     </footer>
 
+    <script src="jquery-3.5.1.min.js "></script>
+    <script src="jquery.inputmask.min.js "></script>
+    <script src="swiper/js/swiper.min.js "></script>
+    <script src="script.js "></script>
 
 </body>
 
