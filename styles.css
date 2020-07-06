@@ -145,8 +145,16 @@
         cursor: pointer;
     }
     
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    
     .form {
         display: none;
+        position: relative;;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -184,12 +192,14 @@
         vertical-align: middle;
         color: white;
         cursor: pointer;
+        transition: 1s;
     }
     
     .form-btn:hover {
         background: transparent;
         color: #ff4e2e;
         border: 1px solid #ff4e2e;
+        transform: scale(1.1);
     }
     
     .form-btn:focus {
@@ -203,6 +213,56 @@
         box-shadow: 0 5px 15px 0 #ff4e2e inset;
     }
     
+    .btn-close {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ff4e2e;
+        border-radius: 30px;
+        position: absolute;
+        margin: 20px;
+        background-color: transparent;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+       
+        
+    }
+    .btn-close:before {
+        content: 'x';
+        color: #ff4e2e;
+        position: absolute;
+        z-index: 2;
+        font-size: 30px;
+        line-height: 1;
+        top: -4px;
+        left: 7px;
+        transition:  1s cubic-bezier(0.77, 0, 0.2, 0.85);
+    }
+    .btn-close:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background: #ff4e2e;
+        z-index: 1;
+        transition: 1s cubic-bezier(0.77, 0, 0.2, 0.85);
+        transform: scale(0.01);
+    }
+    .btn-close:hover:after {
+        transform: scale(1.1);
+    }
+    .btn-close:hover:before {
+        transform: scale(0.8) ;
+        color: #fff;
+    }
+    .btn-close:active,
+    .btn-close:focus{
+        outline: none;
+        box-shadow: 0 5px 15px 0 #ff4e2e;
+    }
     .main-name__teg {
         font-weight: bold;
         color: #ff4e2e;
@@ -223,6 +283,7 @@
     
     .header-container {
         display: flex;
+        position: relative;
         align-items: center;
         height: 104px;
     }
@@ -236,7 +297,10 @@
     .header-menu-burg {
         display: none;
         margin-right: auto;
+        padding: 0;
         cursor: pointer;
+        border: 1px solid transparent;
+        background: transparent;
     }
     
     .header-menu-burg__item {
@@ -274,6 +338,7 @@
     .header-menu-burg:focus,
     .header-menu-burg:hover {
         box-shadow: 0 5px 15px 0 #ff4e2e;
+        outline: none;
     }
     
     .header-menu-burg:active {
@@ -284,11 +349,12 @@
         display: none;
         position: absolute;
         background-color: transparent;
-        z-index: 7;
+        z-index: 8;
     }
     
     .list_burg {
         padding: 7px;
+        text-align: left;
         font-size: 20px;
         line-height: 35px;
         box-shadow: -3px 5px 5px 0 #ff4e2e;
@@ -312,17 +378,21 @@
     .list-item__link {
         text-decoration: none;
         color: #333333;
+        transition: 1s;
+       
     }
     
     .list-item__link:focus,
     .list-item__link:active {
         outline: none;
         box-shadow: 0 10px 5px -5px #ff4e2e;
+        
     }
     
     .list-item__link:hover {
         color: #ff4e2e;
         border-bottom: #ff4e2e 1px solid;
+        
     }
     
     .header-telephone {
@@ -336,6 +406,7 @@
         text-decoration: none;
         margin-right: 30px;
         font-size: 25px;
+        transition: .5s;
     }
     
     .header-telephone__link:before {
@@ -360,7 +431,7 @@
         color: #ff4e2e;
     }
     
-    .imgphone {
+    .btn-imgphone {
         display: none;
         width: 40px;
         height: 40px;
@@ -368,22 +439,21 @@
         font-size: 25px;
         border: 2px solid #ff4e2e;
         border-radius: 40px;
+        background-color: transparent;
         cursor: pointer;
         animation: phone .9s ease-in-out infinite;
     }
     
-    .fa {
-        margin: 3px 0 0 3px;
+    .fa-phone {
         font-size: 1.5em;
         color: #ff4e2e;
+        padding: 0;
+        
     }
     
-    .fa-phone:focus {
-        outline: none;
-        color: black;
-    }
+
     
-    .imgphone:hover::after {
+    .btn-imgphone:hover::after {
         content: '';
         position: absolute;
         border: 1px solid #ff4e2e;
@@ -396,9 +466,12 @@
         opacity: 0;
     }
     
-    .imgphone:active {
+    .btn-imgphone:active,
+    .btn-imgphone:focus {
+        outline: none;
         box-shadow: 0 5px 15px 0 #ff4e2e inset;
     }
+    
     
     .btn {
         padding: 0;
@@ -412,11 +485,13 @@
         font-size: 16px;
         color: #ff4e2e;
         cursor: pointer;
+        transition: 1s;
     }
     
     .btn:hover {
         background: #ff4e2e;
         color: white;
+        transform: scale(1.1);
     }
     
     .btn:focus {
@@ -492,9 +567,9 @@
         animation: fade 5s ease-in 2s, wheel 8s ease-out 7s forwards;
     }
     
-    .main-name__text {
+    .main-name-text {
         position: relative;
-        z-index: 5;
+        z-index: 7;
     }
     
     .main-name-text__lastname {
@@ -521,12 +596,14 @@
         font-size: 18px;
         color: white;
         cursor: pointer;
+        transition: 1s;
     }
     
     .section-btn:hover {
         background: transparent;
         color: #ff4e2e;
         border: 1px solid #ff4e2e;
+        transform: scale(1.1);
     }
     
     .section-btn:focus {
@@ -555,7 +632,7 @@
     
     .center {
         display: flex;
-        margin: 0 auto 75px;
+        margin: 0 auto 80px;
     }
     
     .name-section {
@@ -568,7 +645,7 @@
     .center-web {
         position: relative;
         text-align: center;
-        margin-top: 45px;
+        margin: 45px 0 0;
         font-size: 20px;
         color: #999999;
     }
@@ -589,7 +666,7 @@
         transform: translate(200px);
         transition: 2s ease-in-out;
     }
-    
+ 
     .example {
         background: url('img/bg.png');
     }
@@ -605,7 +682,12 @@
         padding-top: 50px;
         margin-bottom: 90px;
     }
-    
+    .swiper-container:focus,
+    .swiper-container:hover {
+        outline: none;
+        box-shadow: 0 5px 15px 0 #ff4e2e;
+    }
+   
     .swiper-slide__img {
         object-fit: cover;
         width: 100%;
@@ -617,17 +699,18 @@
         text-decoration: none;
         color: #ff4e2e;
         font-size: 20px;
+        transition: 0.5s;
+        cursor: pointer;
         pointer-events: none;
-        cursor: default;
     }
     
     .swiper-slide__link:focus {
         outline: none;
-        border-bottom: #ff4e2e 2px solid;
+        text-decoration: underline;
     }
     
     .swiper-slide__link:hover {
-        border-bottom: #ff4e2e 2px solid;
+        text-decoration: underline;
     }
     
     .swiper-slide__link:active {
@@ -662,6 +745,7 @@
         padding: 0;
         margin: 0;
         top: 0;
+        transition: 0.5s;
     }
     
     .swiper-button-prev {
@@ -704,7 +788,7 @@
     }
     
     .price-text__one {
-        width: 90%;
+        width: 82%;
         margin: 0 auto;
         padding: 80px 0 35px;
         font-size: 45px;
@@ -713,7 +797,7 @@
     }
     
     .price-text__two {
-        width: 90%;
+        width: 82%;
         margin: 0 auto;
         font-size: 18px;
         line-height: 25px;
@@ -807,6 +891,7 @@
     .contact-telephone__link {
         color: #3e3a37;
         text-decoration: none;
+        transition: 0.5s;
     }
     
     .phone:before {
@@ -835,6 +920,7 @@
         overflow: hidden;
         text-indent: -9999px;
         margin: 20px 10px;
+        transition: 0.5s;
     }
     
     .contact-vk__link:focus,
@@ -848,25 +934,24 @@
     }
     
     .vk {
-        background-position: -0px -0px;
         width: 35px;
         height: 21px;
     }
     
     .twitter {
-        background-position: -0px -21px;
+        background-position: 0 -21px;
         width: 29px;
         height: 25px;
     }
     
     .instagram {
-        background-position: -0px -46px;
+        background-position: 0 -46px;
         width: 25px;
         height: 25px;
     }
     
     .facebook {
-        background-position: -0px -71px;
+        background-position: 0 -71px;
         width: 16px;
         height: 28px;
     }
@@ -978,6 +1063,9 @@
         .header-menu-burg {
             display: inline-block;
         }
+        .menu-burg-block {
+            top: 85px;
+        }
         .main-name-text__lastname {
             padding: 210px 0 0;
             font-size: 54px;
@@ -992,10 +1080,11 @@
         .center {
             flex-wrap: wrap;
             width: 75%;
-            margin-bottom: 100px;
+            margin-bottom: 60px;
         }
         .center-web {
             width: 50%;
+            margin-bottom: 20px;
         }
         .example-container {
             height: 1050px;
@@ -1038,6 +1127,10 @@
         .price__teg_canvas {
             display: none;
         }
+        .contact-internet {
+            margin-top: 20px;
+            padding: 0 0 0 40px;
+        }
     }
     
     @media (max-width: 1000px) {
@@ -1069,7 +1162,7 @@
         .header-telephone__btn {
             display: none;
         }
-        .imgphone {
+        .btn-imgphone {
             display: inline-block;
         }
         .main-name-text__profi {
@@ -1112,28 +1205,21 @@
         .main-name-img {
             transform: scale(0.5) translate(400px, 330px);
         }
-        .main-name-text__lastname {
-            font-size: 30px;
-        }
-        .main-name-text__profi {
-            font-size: 14px;
-            padding-bottom: 25px;
-        }
         .service-container {
             height: 100%;
         }
         .center {
             flex-direction: column;
             align-items: center;
-            margin: 0px auto 55px;
+            margin: 0 auto 20px;
             width: 90%;
         }
         .center-web__img {
-            transform: scale(.7);
+            transform: scale(.8);
         }
         .center-web {
             width: 100%;
-            margin: 0px auto 0;
+            margin: 0 auto 20px;
             font-size: 16px;
             line-height: 24px;
         }
@@ -1153,6 +1239,9 @@
             height: 80px;
             background-color: #ffffff;
         }
+        .menu-burg-block {
+            top: 55px;
+        }
         .header-menu-burg__item {
             width: 25px;
             height: 4px;
@@ -1162,13 +1251,21 @@
             margin-right: 4px;
             font-size: 18px;
         }
-        .imgphone {
+        .btn-imgphone {
             width: 25px;
             height: 25px;
+            border-radius: 21px;
             font-size: 12px;
         }
         .main-name {
             background: #ffffff;
+        }
+        .main-name-text__lastname {
+            font-size: 30px;
+        }
+        .main-name-text__profi {
+            font-size: 14px;
+            padding-bottom: 25px;
         }
         .main-name-img {
             transform: scale(0.45) translate(550px, 430px);
@@ -1227,6 +1324,9 @@
         .service-container {
             height: 908px;
         }
+        .center-web {
+           margin-bottom: 10px;
+       }
         .example-container {
             padding-bottom: 50px;
             height: 655px;

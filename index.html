@@ -3,20 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0 ">
+    <meta name="format-detection" content="telephone=no ">
 
     <title>Web-разработчик Мария</title>
 
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="swiper/css/swiper.min.css">
-    <link rel="stylesheet" href=" normalize.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="swiper/css/swiper.min.css ">
+    <link rel="stylesheet" href=" normalize.css ">
+    <link rel="stylesheet" type="text/css" href="styles.css?v1" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes=" 16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes=" 16x16" href="img/favicon-16x16.png ">
     <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color=" #5bbad5 ">
+    <meta name="msapplication-TileColor" content="#da532c ">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -26,25 +26,29 @@
 <body class="body">
     <div class="pop-container">
 
-        <form class="form pop-container__form-phone">
+        <form class="form pop-container__form-phone" aria-label="форма для заказа обратного звонка">
+            <button class="btn-close" aria-label="Закрыть" tabindex="4" type="button"></button>
             <label class="form__label"> Ваше имя:
-                <input class="form__input" required type="text" size="25" name="name" placeholder="Напишите Ваше имя">
+                <input class="form__input name" required tabindex="1" type="text" size="25" name="name"
+                    placeholder="Напишите Ваше имя">
             </label>
             <label class="form__label"> Ваш телефон:
-                <input class="form__input" required type="tel" size="25" name="phone"
+                <input class="form__input tel" required tabindex="2" type="tel" size="25" name="phone"
                     placeholder="Напишите Ваш телефон">
             </label>
-            <button class="form-btn" title="отправить">Заказать обратный звонок</button>
+            <button class="form-btn" tabindex="3" type="submit">Заказать обратный звонок</button>
         </form>
-        <form class="form pop-container__form-mail">
+        <form class="form pop-container__form-mail" aria-label="форма заказа проекта по email">
+            <button class="btn-close" aria-label="Закрыть" tabindex="4" type="button"></button>
             <label class="form__label"> Ваше имя:
-                <input class="form__input" required type="text" size="25" name="name" placeholder="Напишите Ваше имя">
+                <input class="form__input name" required tabindex="1" type="text" size="25" name="name"
+                    placeholder="Напишите Ваше имя">
             </label>
             <label class="form__label"> Ваша почта:
-                <input class="form__input" required type="text" size="25" name="email"
+                <input class="form__input" required tabindex="2" type="text" size="25" name="email"
                     placeholder="Напишите Вашу почту">
             </label>
-            <button class="form-btn" title="отправить">Заказать проект</button>
+            <button class="form-btn" tabindex="3" type="submit">Заказать проект</button>
         </form>
 
     </div>
@@ -61,42 +65,42 @@
                 </ul>
             </nav>
 
-            <div class="header-menu-burg">
+            <div class="header-menu-burg" aria-label="меню" role="button" tabindex="0">
                 <div class="header-menu-burg__item"></div>
                 <div class="header-menu-burg__item"></div>
                 <div class="header-menu-burg__item"></div>
-                <div class="menu-burg-block">
-                    <ul class="list list_burg">
-                        <li class="list-item"><a class="list-item__link" href="#what">Услуги</a></li>
-                        <li class="list-item"><a class="list-item__link" href="#work">Портфолио</a></li>
-                        <li class="list-item"><a class="list-item__link" href="#price">Стоимость</a></li>
-                    </ul>
-                </div>
             </div>
+            <div class="menu-burg-block">
+                <ul class="list list_burg">
+                    <li class="list-item"><a class="list-item__link" href="#what">Услуги</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#work">Портфолио</a></li>
+                    <li class="list-item"><a class="list-item__link" href="#price">Стоимость</a></li>
+                </ul>
+            </div>
+
             <div class="header-telephone">
                 <a class="header-telephone__link" href="tel:+79217575764">+7&nbsp;(921)&nbsp;757-57-64</a>
                 <button class="btn header-telephone__btn" type="button">Заказать звонок</button>
-                <div class="imgphone">
-                    <i class="fa fa-phone p-0" tabindex="0" aria-hidden="true"></i>
-                </div>
+                <button class="btn-imgphone fa fa-phone p-0" aria-label="Заказать обратный звонок" type="button">
+                </button>
             </div>
 
         </div>
     </header>
     <main class="main-name">
-        <span class="main-name__teg main-name__teg_img">&lt;image&gt;</span>
-        <span class="main-name__teg main-name__teg_id">#</span>
-        <span class="main-name__teg main-name__teg_div">&lt;div&gt;</span>
-        <span class="main-name__teg main-name__teg_svg">&lt;svg&gt;</span>
-        <span class="main-name__teg main-name__teg_canvas">&lt;canvas&gt;</span>
-        <span class="main-name__teg main-name__teg_slash">&lt;/&gt;</span>
+        <span class="main-name__teg main-name__teg_img" aria-hidden="true">&lt;image&gt;</span>
+        <span class="main-name__teg main-name__teg_id" aria-hidden="true">#</span>
+        <span class="main-name__teg main-name__teg_div" aria-hidden="true">&lt;div&gt;</span>
+        <span class="main-name__teg main-name__teg_svg" aria-hidden="true">&lt;svg&gt;</span>
+        <span class="main-name__teg main-name__teg_canvas" aria-hidden="true">&lt;canvas&gt;</span>
+        <span class="main-name__teg main-name__teg_slash" aria-hidden="true">&lt;/&gt;</span>
         <div class="main-name-text container">
             <h1 class="main-name-text__lastname">Мария&nbsp;Малеваная</h1>
             <div class="main-name-text__profi">Frontend-разработчик и веб-верстальщик</div>
             <button class="section-btn main-name-text__btn" type="button">Узнать больше</button>
         </div>
         <div class="main-name-img">
-            <svg width="820" height="665" viewbox="0 0 820 665">
+            <svg width="820" height="665" viewbox=" 0 0 820 665 ">
                 <defs>
                     <lineargradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color: #ff2701; stop-opacity:1" />
@@ -116,19 +120,21 @@
             <h2 class="name-section">Что я делаю</h2>
             <div class="center">
                 <div class="center-web">
-                    <img class="center-web__img" src="img/tools-and-utensils.png" alt="Изображение лендинг">
+                    <img class="center-web__img" src="img/tools-and-utensils.png" aria-hidden="true"
+                        alt="Изображение лендинг">
                     <p>Вёрстка лендинг–страниц и сайтов любой сложности</p>
                 </div>
                 <div class="center-web">
-                    <img class="center-web__img" src="img/responsive.png" alt="Изображение верстка">
+                    <img class="center-web__img" src="img/responsive.png" aria-hidden="true" alt="Изображение верстка">
                     <p>Адаптивная вёрстка под все браузеры и устройства</p>
                 </div>
                 <div class="center-web">
-                    <img class="center-web__img" src="img/programming.png" alt="Изображение программирование">
+                    <img class="center-web__img" src="img/programming.png" aria-hidden="true"
+                        alt="Изображение программирование">
                     <p>Frontend–разработка и программирование</p>
                 </div>
                 <div class="center-web">
-                    <img class="center-web__img" src="img/coding.png" alt="Изображение коды">
+                    <img class="center-web__img" src="img/coding.png" aria-hidden="true" alt="Изображение коды">
                     <p>Исправление и доработка существующей вёрстки</p>
                 </div>
             </div>
@@ -142,22 +148,22 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-container">
+            <div class="swiper-container" role="region" aria-label="Галерея с бесконечной прокруткой" tabindex="0">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img class="swiper-slide__img" src="img/editor.png" alt="Изображение сайта1">
+                        <img class="swiper-slide__img" src="img/editor.png" alt="Редактор текста">
                         <a class="swiper-slide__link" href="editor/index.html" target="editor">Редактор текста</a>
                     </div>
                     <div class="swiper-slide">
-                        <img class="swiper-slide__img" src="img/todolist.PNG" alt="Изображение сайта2">
-                        <a class="swiper-slide__link" href="todolist/index.html" target="editor">Список дел</a>
+                        <img class="swiper-slide__img" src="img/todolist.PNG" alt="Список дел">
+                        <a class="swiper-slide__link" href="todolist/index.html" target="todolist">Список дел</a>
                     </div>
                     <div class="swiper-slide">
-                        <img class="swiper-slide__img" src="img/translator.PNG" alt="Изображение сайта3">
+                        <img class="swiper-slide__img" src="img/translator.PNG" alt="Переводчик">
                         <a class="swiper-slide__link" href="translator/index.html" target="translator">Переводчик</a>
                     </div>
                     <div class="swiper-slide">
-                        <img class="swiper-slide__img" src="img/football.PNG" alt="Изображение сайта4">
+                        <img class="swiper-slide__img" src="img/football.PNG" alt="Футбол">
                         <a class="swiper-slide__link" href="football/index.html" target="football">Футбол</a>
                     </div>
                 </div>
@@ -167,20 +173,24 @@
         </div>
     </section>
     <section class="price">
-        <span class="price__teg price__teg_img">&lt;image&gt;</span>
-        <span class="price__teg price__teg_span">&lt;span&gt;</span>
-        <span class="price__teg price__teg_div">&lt;div&gt;</span>
-        <span class="price__teg price__teg_svg">&lt;svg&gt;</span>
-        <span class="price__teg price__teg_canvas">&lt;canvas&gt;</span>
-        <span class="price__teg price__teg_slash">&lt;/&gt;</span>
+        <h2 class="visually-hidden">Стоимость</h2>
+        <span class="price__teg price__teg_img" aria-hidden="true">&lt;image&gt;</span>
+        <span class="price__teg price__teg_span" aria-hidden="true">&lt;span&gt;</span>
+        <span class="price__teg price__teg_div" aria-hidden="true">&lt;div&gt;</span>
+        <span class="price__teg price__teg_svg" aria-hidden="true">&lt;svg&gt;</span>
+        <span class="price__teg price__teg_canvas" aria-hidden="true">&lt;canvas&gt;</span>
+        <span class="price__teg price__teg_slash" aria-hidden="true">&lt;/&gt;</span>
         <div class="price-text container">
-            <h3 id="price" class="price-text__one">Адаптивная&nbsp;вёрстка под все устройства <br>и браузеры от&nbsp;1000&nbsp;рублей всего за 4&nbsp;часа.*</h3>
-            <p class="price-text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально,
+            <h3 id="price" class="price-text__one">Адаптивная&nbsp;вёрстка под все устройства <br>и браузеры
+                от&nbsp;1000&nbsp;рублей всего за 4&nbsp;часа.*</h3>
+            <p class="price-text__two"><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются
+                индивидуально,
                 <br> в зависимости от сложности задач. </p>
         </div>
     </section>
-    <div class="contact">
+    <section class="contact">
         <div class="contact-container container">
+            <h2 class="visually-hidden">Контакты</h2>
             <nav class="contact-menu">
                 <ul class="list list_column">
                     <li class="list-item"><a class="list-item__link" href="#what">Услуги</a></li>
@@ -190,26 +200,33 @@
             </nav>
             <div class="contact-telephone">
                 <a href="tel:+79217575764" class="phone contact-telephone__link">&nbsp;+7&nbsp;(921)&nbsp;757-57-64</a>
-                <a href="mailto:malevanayamv@mail.ru" class="mail contact-telephone__link">&nbsp;malevanayamv@mail.ru</a>
+                <a href="mailto:malevanayamv@mail.ru"
+                    class="mail contact-telephone__link">&nbsp;malevanayamv@mail.ru</a>
             </div>
             <div class="contact-internet">
                 <button class="contact__btn btn" type="button">Заказать звонок</button>
                 <div class="contact-vk">
-                    <a class="vk contact-vk__link" href=" https://vk.com/id23350535" target="_blank"></a>
-                    <a class="facebook contact-vk__link" href="https://www.facebook.com" target="_blank"></a>
-                    <a class="twitter contact-vk__link" href="https://twitter.com/explore" target="_blank"></a>
-                    <a class="instagram contact-vk__link" href="https://www.instagram.com/mariavalerievnam" target="_blank"></a>
+                    <a class="vk contact-vk__link" href=" https://vk.com/id23350535" aria-label="vkontakte"
+                        target="_blank"></a>
+                    <a class="facebook contact-vk__link" href="https://www.facebook.com" aria-label="facebook"
+                        target=" _blank"></a>
+                    <a class="twitter contact-vk__link" href="https://twitter.com/explore" aria-label="twitter"
+                        target=" _blank"></a>
+                    <a class="instagram contact-vk__link" href="https://www.instagram.com/mariavalerievnam"
+                        aria-label="instagram" target=" _blank "></a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <footer class="footer">
         &copy;&nbsp;Мария Малеваная 2020
     </footer>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="jquery.inputmask.min.js"></script>
-    <script src="swiper/js/swiper.min.js"></script>
-    <script src="script.js"></script>
+
+    <script src="jquery-3.5.1.min.js "></script>
+    <script src="jquery.inputmask.min.js "></script>
+    <script src="swiper/js/swiper.min.js "></script>
+    <script src="script.js "></script>
+
 </body>
 
 </html>

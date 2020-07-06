@@ -15,7 +15,7 @@ $(function() {
     ctx.arcTo(170, 0, 320, 65, 220);
     ctx.lineTo(320, 335);
     ctx.lineTo(0, 335);
-    ctx.stroke()
+    ctx.stroke();
     ctx.closePath();
     ctx.fillStyle = grd;
     ctx.fill();
@@ -62,6 +62,8 @@ $(function() {
         },
 
     });
+  
+    let lastFocus ;
 
     function disableScroll() {
         $('.page').css('overflow', 'hidden');
@@ -83,19 +85,34 @@ $(function() {
         }
 
     });
-    $('.imgphone, .header-telephone__btn,  .main-name-text__btn, .service__btn, .contact__btn').click(function() {
+    $('.btn-imgphone, .header-telephone__btn,  .main-name-text__btn, .service__btn, .contact__btn').click(function() {
+        lastFocus = document.activeElement;
         $('.pop-container').css({ opacity: 1, display: 'flex' }).fadeIn(400, disableScroll());
-        $('.pop-container__form-phone').css({ 'display': 'flex' }, 500);
+        $('.pop-container__form-phone').css({ display : 'flex' }, 500);
+        $('.name').focus();
         $('input[type=tel]').inputmask({
             "mask": " + 7(999) 999 - 99 - 99"
         });
-
+        $('.btn-close').keydown(function(e){
+            if (e.which === 9) {
+                e.preventDefault();
+                $('.name').focus();
+            }
+        });
     });
     $('.btn-mail').click(function() {
+        lastFocus = document.activeElement;
         $('.pop-container').css({ opacity: 1, display: 'flex' }).fadeIn(400, disableScroll());
-        $('.pop-container__form-mail').css({ 'display': 'flex' }, 500);
+        $('.pop-container__form-mail').css({ display : 'flex' }, 500).focus();
+        $('.name').focus();
         $('input[name=email]').inputmask({
             mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+        });
+         $('.btn-close').keydown(function(e){
+            if (e.which === 9) {
+                e.preventDefault();
+                $('.name').focus();
+            }
         });
     });
 
@@ -106,19 +123,21 @@ $(function() {
             data: $(this).serialize()
         }).done(function() {
             let phone = $('input[type=tel]').val();
-            if (phone.indexOf('_') !== -1) {
-                alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!")
-            } else { alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!") };
-            $('.pop-container').fadeOut(400, enableScroll);
+            if (phone.indexOf('_') === -1 || $('.pop-container__form-phone').css('display') === 'none' ) { 
+                alert("Cпасибо! В ближайшее  время мы с Вами свяжемся!");
+                $('.pop-container').fadeOut(400, enableScroll);
+                $('.pop-container__form-phone, .pop-container__form-mail').css({ 'display': 'none' }, 500);
+            } else {
+                alert("Извините! Вы неправильно указали номер телефона! Попробуйте еще раз!");
+            }
         });
         return false;
     });
 
-    $('.pop-container').click(function(ev) {
-        if (ev.target === this) {
-            $(this).fadeOut(400, enableScroll);
-            $('.form').css({ 'display': 'none' }, 500);
-        }
-    });
+    $('.btn-close').click(function(ev) {
+            $('.pop-container').fadeOut(400, enableScroll);
+            $('.pop-container__form-phone, .pop-container__form-mail').css({ 'display': 'none' }, 500);
+            lastFocus.focus();
+        });
 
 });
